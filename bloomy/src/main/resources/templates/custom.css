@@ -1,0 +1,85 @@
+.table td, .table:not(.table-bordered) th {
+    border-top: none; }
+
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: rgba(0, 0, 0, 0.02); }
+
+.text-center{
+    text-align: center !important;
+}
+
+.p-0{
+    padding: 0 !important;
+}
+
+.form-control {
+    display: block;
+    width: 100%;
+    background-clip: padding-box;
+}  
+
+
+ .input-group>.form-control {
+    position: relative;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    width: 1%;
+    margin-bottom: 0;
+ }
+
+ .search-bar {
+    width: 30%;
+    float: right;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .search-bar .form-control {
+    height: 40px;
+    border: 1px solid #ccc;
+    border-radius: 4px 0 0 4px;
+    margin-right: -1px;
+    padding: 6px 12px;
+    font-size: 14px;
+  }
+  
+  .search-bar .input-group-btn {
+    display: flex;
+  }
+  
+  .search-bar .btn {
+    height: 40px;
+    border: 1px solid #CE8460;
+    border-radius: 0 4px 4px 0;
+    margin-left: -1px;
+    padding: 6px 12px;
+    font-size: 14px;
+    color: #fff;
+    background-color: #CE8460;
+    cursor: pointer;
+  }
+  
+  
+  .search-bar .fa-search {
+    font-size: 16px;
+  }
+
+  #search-bar-back{
+    background-color: #fff;
+  }
+
+  .center{
+    text-align: center;
+  }
+
+  .p-1{
+    font-size: 30px;
+    flex: .3;
+    padding-top: 15px !important;
+    
+  }
+
+  #myChart1{
+    margin-bottom: 30px;
+  }
