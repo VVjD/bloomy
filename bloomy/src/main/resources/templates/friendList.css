@@ -1,0 +1,213 @@
+@font-face {
+    font-family: 'GmarketSansMedium';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+body{
+   
+ font-family: 'GmarketSansMedium', sans-serif; 
+    
+}
+
+
+.friendTitle{
+width: 900px;
+font-size: 30px;
+height: 40px;
+border-bottom: 2px solid rgb(215, 215, 215);
+
+margin-bottom: 15px;
+
+
+}
+
+.searchWrap{
+    text-align: right;
+    border-bottom: 1px dotted rgb(215, 215, 215);
+    margin-bottom: 30px;
+}
+
+
+.searchBox{
+    display: inline-block;
+    margin-bottom: 10px;
+    
+}
+
+.searchText{
+    color: rgb(124, 124, 124);
+    height: 33px;
+    padding: 5px;
+    border: 1.5px solid rgb(196, 196, 196);
+}
+
+
+
+.searchBtn{
+    text-align: center;
+    background-color: rgb(226, 226, 226);
+    color: rgb(124, 124, 124);
+    width: 65px;
+    height: 28px;
+    border: none;
+
+}
+
+.searchBtn:hover{
+    cursor: pointer;
+}
+
+.searchBtn:active{
+    background-color: rgb(207, 207, 207);
+}
+
+
+
+
+
+.deleteWrap{
+    display: inline-block;
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+
+.deleteBox{
+    display: inline-block;
+}
+
+.deleteBtn{
+    height: 28px;
+    width: 65px;
+    color: rgb(124, 124, 124);
+    border: none;
+    margin-bottom: 7px;
+    background-color: rgb(226, 226, 226);
+}
+
+.deleteBtn:hover{
+    cursor: pointer;
+}
+
+.deleteBtn:active{
+    background-color: rgb(207, 207, 207);
+}
+
+.sortWrap{
+    float: right;
+    display: inline-block;
+    
+}
+
+.sortBox{
+    display: inline-block;
+}
+
+.sortCount{
+    display: inline-block;
+    font-size: 15px;
+}
+
+.sortCount{
+    color: rgb(124, 124, 124);
+}
+
+#sortSelect{
+    margin-left: 10px;
+    font-size: 15px;
+    height: 28px;
+    width: 115px;
+    color: rgb(154, 154, 154);
+    border: 2px solid rgb(177, 177, 177);
+}
+
+.listWrap{
+    width: 900px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.friendTable{
+    width: 100%;
+}
+
+thead > tr{
+    border-top: 1px solid #f3d0bc;
+    border-bottom: 1px solid #f3d0bc;
+}
+
+th{
+    font-weight: 200;
+    font-size: 18px;
+    height: 40px;
+    background-color: #f5d7c6;
+    color: white;
+}
+
+td{
+    height: 43px;
+    border-bottom: 1px solid #efefef;
+}
+
+.thName{
+    text-align: center;
+    width: 63%;
+}
+
+.thNewPost{
+    width: 15%;
+    text-align: center;
+}
+
+.thAdd{
+    width: 17%;
+    text-align: center;
+}
+
+.tdCheckFriend{
+    width: 5%;
+    text-align: center;
+}
+
+.checkFriend{
+    width: 16px;
+    height: 16px;
+}
+
+.tdNewPostDate, .tdAddDate{
+    text-align: center;
+    font-size: 15px;
+    color: rgb(119, 119, 119);
+}
+
+.tdInfo{
+    padding-left: 10px;
+}
+
+.userNick{
+    font-size: 17px;
+}
+
+.userBlogTitle{
+    font-size: 15px;
+    color: rgb(175, 175, 175);
+}
+
+.userDivide{
+    font-size: 18px;
+    color: rgb(175, 175, 175);
+    margin-left: 5px;
+    margin-right: 10px;
+}
+
+
+.margin{
+    margin-bottom: 24px;
+}
+
+
+
+
+

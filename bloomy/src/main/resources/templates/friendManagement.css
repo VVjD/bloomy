@@ -1,0 +1,185 @@
+@font-face {
+    font-family: 'GmarketSansMedium';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+body{
+   
+ font-family: 'GmarketSansMedium', sans-serif; 
+    
+}
+
+.tabs {
+    display: flex;
+    cursor: pointer;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #e6e6e6;
+}
+.tab {
+    padding: 10px 20px;
+    /* border: 1px solid #ccc; */
+    border-bottom: none;
+    background-color: #ffffff;
+}
+.tab:not(:last-child) {
+    margin-right: 5px;
+}
+.tab-content {
+    /* border: 1px solid #ccc; */
+    
+    padding: 20px;
+    display: none;
+}
+.tab-content.active {
+    display: block;
+}
+.tab.active {
+    background-color: #e6e6e6;
+    border-bottom: 1px solid #e6e6e6;
+}
+
+.manageBtn{
+    width: 45px;
+    height: 27px;
+    font-size: 14px;
+    border-style: none;
+    margin-left: 1px;
+    margin-right: 1px;
+    background-color: #e3e3e3;
+}
+
+.manageBtn:active{
+    background-color: #d6d6d6;
+    border-style: none;
+}
+
+
+.manageBtn:hover{
+    cursor: pointer;
+}
+
+
+
+
+.listWrap{
+    width: 900px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.friendTable{
+    width: 100%;
+}
+
+thead > tr{
+    border-top: 1px solid #f3d0bc;
+    border-bottom: 1px solid #f3d0bc;
+}
+
+th{
+    font-weight: 200;
+    font-size: 18px;
+    height: 40px;
+    background-color: #f5d7c6;
+    color: white;
+    text-align: center;
+}
+
+td{
+    height: 43px;
+    border-bottom: 1px solid #efefef;
+}
+
+.thName{
+
+    width: auto;
+}
+
+
+
+.thManagement{
+    width: 23%;
+    
+}
+
+.thAddDate{
+    width: 15%;
+}
+
+.thCheckFriend, .checkFriend{
+    width: 5%;
+    text-align: center;
+}
+
+.tdCheckFriend{
+    width: 5%;
+    text-align: center;
+}
+
+.checkFriend{
+    width: 16px;
+    height: 16px;
+  
+}
+
+
+
+.tdNewPostDate, .tdAddDate{
+    text-align: center;
+    font-size: 15px;
+    color: rgb(119, 119, 119);
+}
+
+.tdInfo{
+    padding-left: 10px;
+}
+
+.userNick{
+    font-size: 17px;
+}
+
+.userBlogTitle{
+    font-size: 15px;
+    color: rgb(175, 175, 175);
+}
+
+.userDivide{
+    font-size: 18px;
+    color: rgb(175, 175, 175);
+    margin-left: 5px;
+    margin-right: 10px;
+}
+
+.thNewPost{
+    width: 20%;
+}
+
+.thAdd{
+ width: 15%;   
+}
+
+.btnFriendNo{
+    width: 85px;
+    height: 30px;
+    border-style: none;
+    background-color: #e3e3e3;
+}
+
+.btnFriendNo:hover{
+    cursor: pointer;
+}
+
+.btnFriendNo:active{
+    background-color: #d6d6d6;
+}
+
+
+
+.pagination mt-5 pt-4{
+    align-items: center;
+}
+
+
