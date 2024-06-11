@@ -80,8 +80,22 @@ Version      : 1.0
 @import url("https://fonts.googleapis.com/css?family=Lora:400,700|Open+Sans|Unna:400,700&display=swap");
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');
 
+@font-face {
+  font-family: 'GangwonEduPowerExtraBoldA';
+  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/GangwonEduPowerExtraBoldA.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'GmarketSansMedium';
+  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
 body{
-  font-family: "Open Sans", sans-serif;
+  font-family: 'GmarketSansMedium';
   line-height: 26px;
   font-size: 16px;
   text-rendering: optimizeLegibility;
@@ -98,7 +112,7 @@ body{
 
 
 p {
-  font-family: "Open Sans", sans-serif;
+  font-family: 'GmarketSansMedium';
   line-height: 26px;
   font-size: 16px;
   text-rendering: optimizeLegibility;
@@ -126,7 +140,7 @@ h6,
 .h6 {
   color: #1c1c1c;
   font-weight: 600;
-  font-family: "Unna", serif;
+  font-family: 'GangwonEduPowerExtraBoldA';
 }
 
 h1,
