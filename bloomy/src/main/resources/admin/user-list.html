@@ -21,18 +21,18 @@
     <!-- THEME CSS
 	================================================== -->
     <!-- Bootstrap -->
-    <link rel="stylesheet" href="plugins/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../templates/plugins/bootstrap/css/bootstrap.min.css">
     <!-- Themify -->
-    <link rel="stylesheet" href="plugins/themify/css/themify-icons.css">
-    <link rel="stylesheet" href="plugins/slick-carousel/slick-theme.css">
-    <link rel="stylesheet" href="plugins/slick-carousel/slick.css">
+    <link rel="stylesheet" href="../templates/plugins/themify/css/themify-icons.css">
+    <link rel="stylesheet" href="../templates/plugins/slick-carousel/slick-theme.css">
+    <link rel="stylesheet" href="../templates/plugins/slick-carousel/slick.css">
     <!-- Slick Carousel -->
-    <link rel="stylesheet" href="plugins/owl-carousel/owl.carousel.min.css">
-    <link rel="stylesheet" href="plugins/owl-carousel/owl.theme.default.min.css">
-    <link rel="stylesheet" href="plugins/magnific-popup/magnific-popup.css">
+    <link rel="stylesheet" href="../templates/plugins/owl-carousel/owl.carousel.min.css">
+    <link rel="stylesheet" href="../templates/plugins/owl-carousel/owl.theme.default.min.css">
+    <link rel="stylesheet" href="../templates/plugins/magnific-popup/magnific-popup.css">
     <!-- manin stylesheet -->
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/custom.css">
+    <link rel="stylesheet" href="../templates/css/style.css">
+    <link rel="stylesheet" href="../templates/css/custom.css">
     
 </head>
 <body>
@@ -42,7 +42,7 @@
   <div class="container">
     <div class="row justify-content-center">
       <div class="col-lg-6 text-center">
-        <a class="navbar-brand" href="index.html"><img src="images/logo.png" alt="" class="img-fluid w-100"></a>
+        <a class="navbar-brand" href="index.html"><img src="../templates/images/logo.png" alt="" class="img-fluid w-100"></a>
       </div>
     </div>
   </div>
@@ -51,7 +51,7 @@
 <header class="header-top bg-grey justify-content-center">
    <nav class="navbar navbar-expand-lg navigation">
       <div class="container">
-          <a class="navbar-brand d-lg-none" href="index.html"><img src="images/logo.png" alt="" class="img-fluid"></a>
+          <a class="navbar-brand d-lg-none" href="index.html"><img src="../templates/images/logo.png" alt="" class="img-fluid"></a>
 
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="ti-menu"></span>
@@ -198,64 +198,28 @@
 			<div class="col-lg-9 col-md-12 col-sm-12 col-xs-12">
 				<div class="single-post">
     <div class="post-header mb-5 text-center">
-        <!-- <h2 class="post-title mt-2">
-            통계
-        </h2> -->
+        <h2 class="post-title mt-2">
+            유저 관리
+        </h2>
 
         <div class="post-featured-image mt-5">
-            <div class="row">
-                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-                    <div class="media border-bottom py-3 sidebar-post-item">
-                        <div class="p-1">
-                            <i class="fa-solid fa-user-plus p-0"></i>
-                        </div>
-                        <div class="media-body">
-                            <span class="text-muted letter-spacing text-uppercase font-sm">일일 가입자</span>
-                            <h4>30</h4>
-                        </div>
-                    </div>
+            <div class="input-group search-bar">
+                <input type="text" class="form-control" id="search-bar-back"
+                    placeholder="검색어를 입력하세요.">
+                <div class="input-group-btn">
+                    <button class="btn btn-primary">
+                        <i class="fas fa-search"></i>
+                    </button>
                 </div>
-                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-                    <div class="media border-bottom py-3 sidebar-post-item">
-                        <div class="p-1">
-                            <i class="fa-solid fa-users p-0"></i>
-                        </div>
-                        <div class="media-body">
-                            <span class="text-muted letter-spacing text-uppercase font-sm">일일 방문자</span>
-                            <h4>30</h4>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-                    <div class="media border-bottom py-3 sidebar-post-item">
-                        <div class="p-1">
-                            <i class="fa-solid fa-house-user p-0"></i>
-                        </div>
-                        <div class="media-body">
-                            <span class="text-muted letter-spacing text-uppercase font-sm">일일 블로그 개설 수</span>
-                            <h4>30</h4>
-                        </div>
-                    </div>
-                </div>
-                
             </div>
-            <h3 class="post-title mt-5">
-                방문자 통계
-            </h3>
-            <div>
-                <canvas id="myChart1"></canvas>
-            </div>
-
-            <h3 class="post-title mt-4">
-                일일 조회수 높은 게시글
-            </h3>
             <table class="table table-striped">
                 <tr style="border-bottom: 1px solid black;">
-                    <th>글번호</th>
                     <th>아이디</th>
-                    <th>제목</th>
-                    <th>날짜</th>
-                    <th>조회수</th>
+                    <th>이름</th>
+                    <th>블로그 개설 유무</th>
+                    <th>게시글 수</th>
+                    <th>가입일자</th>
+                    <th>상태</th>
                 </tr>
                 <tr>
                     <td>아이디</td>
@@ -263,6 +227,7 @@
                     <td>블로그 개설 유무</td>
                     <td>게시글 수</td>
                     <td>가입일자</td>
+                    <td>상태</td>
                 </tr>
                 <tr>
                     <td>아이디</td>
@@ -270,6 +235,7 @@
                     <td>블로그 개설 유무</td>
                     <td>게시글 수</td>
                     <td>가입일자</td>
+                    <td>상태</td>
                 </tr>
                 <tr>
                     <td>아이디</td>
@@ -277,6 +243,7 @@
                     <td>블로그 개설 유무</td>
                     <td>게시글 수</td>
                     <td>가입일자</td>
+                    <td>상태</td>
                 </tr>
                 <tr>
                     <td>아이디</td>
@@ -284,6 +251,7 @@
                     <td>블로그 개설 유무</td>
                     <td>게시글 수</td>
                     <td>가입일자</td>
+                    <td>상태</td>
                 </tr>
                 <tr>
                     <td>아이디</td>
@@ -291,6 +259,7 @@
                     <td>블로그 개설 유무</td>
                     <td>게시글 수</td>
                     <td>가입일자</td>
+                    <td>상태</td>
                 </tr>
                 <tr>
                     <td>아이디</td>
@@ -298,6 +267,7 @@
                     <td>블로그 개설 유무</td>
                     <td>게시글 수</td>
                     <td>가입일자</td>
+                    <td>상태</td>
                 </tr>
                 <tr>
                     <td>아이디</td>
@@ -305,8 +275,20 @@
                     <td>블로그 개설 유무</td>
                     <td>게시글 수</td>
                     <td>가입일자</td>
+                    <td>상태</td>
                 </tr>
             </table>
+
+            <div class="pagination mt-5 pt-4">
+                <ul class="list-inline">
+                    <li class="list-inline-item"><a href="#" class="active">1</a></li>
+                    <li class="list-inline-item"><a href="#">2</a></li>
+                    <li class="list-inline-item"><a href="#">3</a></li>
+                    <li class="list-inline-item"><a href="#" class="prev-posts"><i class="ti-arrow-right"></i></a></li>
+                </ul>
+            </div>
+
+
         </div>
     </div>
 </div>
@@ -345,55 +327,22 @@
 <!-- THEME JAVASCRIPT FILES
 ================================================== -->
 <!-- initialize jQuery Library -->
-<script src="plugins/jquery/jquery.js"></script>
+<script src="../templates/plugins/jquery/jquery.js"></script>
 <!-- Bootstrap jQuery -->
-<script src="plugins/bootstrap/js/bootstrap.min.js"></script>
-<script src="plugins/bootstrap/js/popper.min.js"></script>
+<script src="../templates/plugins/bootstrap/js/bootstrap.min.js"></script>
+<script src="../templates/plugins/bootstrap/js/popper.min.js"></script>
 <!-- Owl caeousel -->
-<script src="plugins/owl-carousel/owl.carousel.min.js"></script>
-<script src="plugins/slick-carousel/slick.min.js"></script>
-<script src="plugins/magnific-popup/magnific-popup.js"></script>
+<script src="../templates/plugins/owl-carousel/owl.carousel.min.js"></script>
+<script src="../templates/plugins/slick-carousel/slick.min.js"></script>
+<script src="../templates/plugins/magnific-popup/magnific-popup.js"></script>
 <!-- Instagram Feed Js -->
-<script src="plugins/instafeed-js/instafeed.min.js"></script>
+<script src="../templates/plugins/instafeed-js/instafeed.min.js"></script>
 <!-- Google Map -->
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCC72vZw-6tGqFyRhhg5CkF2fqfILn2Tsw"></script>
-<script src="plugins/google-map/gmap.js"></script>
+<script src="../templates/plugins/google-map/gmap.js"></script>
 <!-- main js -->
-<script src="js/custom.js"></script>
+<script src="../templates/js/custom.js"></script>
 <script src="https://kit.fontawesome.com/e437c6533a.js" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<script>
-
-const ctx = document.getElementById('myChart1');
-
-const labels = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
-const data = {
-  labels: labels,
-  datasets: [{
-    label: 'My First Dataset',
-    data: [65, 59, 80, 81, 56, 55, 40],
-    fill: false,
-    borderColor: 'rgb(75, 192, 192)',
-    tension: 0.1
-  }]
-};
-
-const config = {
-  type: 'line',
-  data: data,
-  options: {
-    scales: {
-      y: {
-        beginAtZero: true
-      }
-    }
-  }
-};
-
-new Chart(ctx, config);
-
-
-</script>
 
 
 </body>
