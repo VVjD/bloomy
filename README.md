@@ -7,6 +7,12 @@
 
 <br>
 
+## 화면 설계
+
+**[Figma](https://www.figma.com/design/AbrPeZXwssvVnBM3n9ZNkk/Bloomy?node-id=0-1&t=bdKGPKAuQtSmZXb2-1)**
+
+<br>
+
 ## 개발 환경
 
 **IDE**   
@@ -21,6 +27,7 @@
 <img src="https://img.shields.io/badge/discord-5865F2?style=flat-square&logo=discord&logoColor=white">
 
 <br>
+
 
 ## 상세 기능
 
