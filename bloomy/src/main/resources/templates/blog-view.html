@@ -7,31 +7,31 @@
  // GITHUB: https://github.com/themefisher/
 -->
 
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 
 <head>
     <meta charset="utf-8">
-    <title>BlogMain</title>
+    <title>Bloomy|Blog</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!--Favicon-->
-    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" th:href="@{/images/favicon.ico}" type="image/x-icon">
 
     <!-- THEME CSS
-	================================================== -->
+    ================================================== -->
     <!-- Bootstrap -->
-    <link rel="stylesheet" href="plugins/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" th:href="@{/plugins/bootstrap/css/bootstrap.min.css}">
     <!-- Themify -->
-    <link rel="stylesheet" href="plugins/themify/css/themify-icons.css">
-    <link rel="stylesheet" href="plugins/slick-carousel/slick-theme.css">
-    <link rel="stylesheet" href="plugins/slick-carousel/slick.css">
+    <link rel="stylesheet" th:href="@{/plugins/themify/css/themify-icons.css}">
+    <link rel="stylesheet" th:href="@{/plugins/slick-carousel/slick-theme.css}">
+    <link rel="stylesheet" th:href="@{/plugins/slick-carousel/slick.css}">
     <!-- Slick Carousel -->
-    <link rel="stylesheet" href="plugins/owl-carousel/owl.carousel.min.css">
-    <link rel="stylesheet" href="plugins/owl-carousel/owl.theme.default.min.css">
-    <link rel="stylesheet" href="plugins/magnific-popup/magnific-popup.css">
-    <!-- manin stylesheet -->
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" th:href="@{/plugins/owl-carousel/owl.carousel.min.css}">
+    <link rel="stylesheet" th:href="@{/plugins/owl-carousel/owl.theme.default.min.css}">
+    <link rel="stylesheet" th:href="@{/plugins/magnific-popup/magnific-popup.css}">
+    <!-- main stylesheet -->
+    <link rel="stylesheet" th:href="@{/css/style.css}">
     <style>
 		@font-face {
             font-family: 'Pretendard-Regular';
@@ -71,7 +71,7 @@
                                         <div class="col-lg-3 col-md-6">
                                             <article class="post-grid mb-5">
                                                 <a class="post-thumb mb-4 d-block" href="blog-view.html">
-                                                    <img src="images/news/f1.jpg" alt="" class="img-fluid w-100">
+                                                    <img th:src="@{/images/news/f1.jpg}" alt="" class="img-fluid w-100">
                                                 </a>
                                                 <span class="cat-name text-color font-extra text-sm text-uppercase letter-spacing-1">Explore</span>
                                                 <h3 class="post-title mt-1"><a href="blog-view.html">The best place to explore to enjoy</a></h3>
@@ -83,7 +83,7 @@
                                         <div class="col-lg-3 col-md-6">
                                             <article class="post-grid mb-5">
                                                 <a class="post-thumb mb-4 d-block" href="blog-view.html">
-                                                    <img src="images/news/f2.jpg" alt="" class="img-fluid w-100">
+                                                    <img src="../static/images/news/f2.jpg" alt="" class="img-fluid w-100">
                                                 </a>
                                                 <span class="cat-name text-color font-sm font-extra text-uppercase letter-spacing">Lifestyle</span>
                                                 <h3 class="post-title mt-1"><a href="blog-view.html">How to Make list for travelling alone</a></h3>
@@ -95,7 +95,7 @@
                                         <div class="col-lg-3 col-md-6">
                                             <article class="post-grid mb-5">
                                                 <a class="post-thumb mb-4 d-block" href="blog-view.html">
-                                                    <img src="images/news/f3.jpg" alt="" class="img-fluid w-100">
+                                                    <img src="../static/images/news/f3.jpg" alt="" class="img-fluid w-100">
                                                 </a>
                                                 <span class=" cat-name text-color font-sm font-extra text-uppercase letter-spacing">Food</span>
                                                 <h3 class="post-title mt-1"><a href="blog-view.html">5 ingredient cilantro vinaigrette</a></h3>
@@ -107,7 +107,7 @@
                                         <div class="col-lg-3 col-md-6">
                                             <article class="post-grid mb-5">
                                                 <a class="post-thumb mb-4 d-block" href="blog-view.html">
-                                                    <img src="images/news/f4.jpg" alt="" class="img-fluid w-100">
+                                                    <img src="../static/images/news/f4.jpg" alt="" class="img-fluid w-100">
                                                 </a>
                                                 <span class="cat-name text-color font-sm font-extra text-uppercase letter-spacing">Explore</span>
                                                 <h3 class="post-title mt-1"><a href="blog-view.html">A Simple Way to Feel Like Home When You
@@ -120,7 +120,7 @@
                                         <div class="col-lg-3 col-md-6">
                                             <article class="post-grid mb-5">
                                                 <a class="post-thumb mb-4 d-block" href="blog-view.html">
-                                                    <img src="images/news/f5.jpg" alt="" class="img-fluid w-100">
+                                                    <img src="../static/images/news/f5.jpg" alt="" class="img-fluid w-100">
                                                 </a>
                                                 <span class="cat-name text-color font-sm font-extra text-uppercase letter-spacing">Travel</span>
                                                 <h3 class="post-title mt-1"><a href="blog-view.html">What Type of Traveller Are You?</a></h3>
@@ -132,7 +132,7 @@
                                         <div class="col-lg-3 col-md-6">
                                             <article class="post-grid mb-5">
                                                 <a class="post-thumb mb-4 d-block" href="blog-view.html">
-                                                    <img src="images/news/f6.jpg" alt="" class="img-fluid w-100">
+                                                    <img src="../static/images/news/f6.jpg" alt="" class="img-fluid w-100">
                                                 </a>
                                                 <span class="cat-name text-color font-sm font-extra text-uppercase letter-spacing">Experience</span>
                                                 <h3 class="post-title mt-1"><a href="blog-view.html">A Road Trip Review of the 2018</a></h3>
@@ -144,7 +144,7 @@
                                         <div class="col-lg-3 col-md-6">
                                             <article class="post-grid mb-5">
                                                 <a class="post-thumb mb-4 d-block" href="blog-view.html">
-                                                    <img src="images/news/f7.jpg" alt="" class="img-fluid w-100">
+                                                    <img src="../static/images/news/f7.jpg" alt="" class="img-fluid w-100">
                                                 </a>
                                                 <span class=" cat-name text-color font-sm font-extra text-uppercase letter-spacing">music</span>
                                                 <h3 class="post-title mt-1"><a href="blog-view.html">Portugal’s Sunset summer vission</a></h3>
@@ -156,7 +156,7 @@
                                         <div class="col-lg-3 col-md-6">
                                             <article class="post-grid mb-5">
                                                 <a class="post-thumb mb-4 d-block" href="blog-view.html">
-                                                    <img src="images/news/f8.jpg" alt="" class="img-fluid w-100">
+                                                    <img src="../static/images/news/f8.jpg" alt="" class="img-fluid w-100">
                                                 </a>
                                                 <span class="cat-name text-color font-sm font-extra text-uppercase letter-spacing">beauty</span>
                                                 <h3 class="post-title mt-1"><a href="blog-view.html">The best soft Tropical Getaway</a></h3>
@@ -195,13 +195,13 @@
 						<div class="sidebar-wrap mt-5 mt-lg-0">
 							<div class="sidebar-widget about mb-5 text-center p-3">
 								<div class="about-author">
-									<img src="images/author.jpg" alt="" class="img-fluid">
+									<img src="../static/images/author.jpg" alt="" class="img-fluid">
 								</div>
 								<h4 class="mb-0 mt-4">Liam Mason</h4>
 								<p>Travel Blogger</p>
 								<p>I'm Liam, last year I decided to quit my job and travel the world. You can follow my journey on this
 									blog!</p>
-								<img src="images/liammason.png" alt="" class="img-fluid">
+								<img src="../static/images/liammason.png" alt="" class="img-fluid">
 							</div>
 
 
@@ -239,22 +239,21 @@
     <!-- JAVASCRIPT FILES
 ================================================== -->
     <!-- initialize jQuery Library -->
-    <script src="plugins/jquery/jquery.js"></script>
+    <script th:src="@{/plugins/jquery/jquery.js}"></script>
     <!-- Bootstrap jQuery -->
-    <script src="plugins/bootstrap/js/bootstrap.min.js"></script>
-    <script src="plugins/bootstrap/js/popper.min.js"></script>
+    <script th:src="@{/plugins/bootstrap/js/bootstrap.min.js}"></script>
+    <script th:src="@{/plugins/bootstrap/js/popper.min.js}"></script>
     <!-- Owl caeousel -->
-    <script src="plugins/owl-carousel/owl.carousel.min.js"></script>
-    <script src="plugins/slick-carousel/slick.min.js"></script>
-    <script src="plugins/magnific-popup/magnific-popup.js"></script>
+    <script th:src="@{/plugins/owl-carousel/owl.carousel.min.js}"></script>
+    <script th:src="@{/plugins/slick-carousel/slick.min.js}"></script>
+    <script th:src="@{/plugins/magnific-popup/magnific-popup.js}"></script>
     <!-- Instagram Feed Js -->
-    <script src="plugins/instafeed-js/instafeed.min.js"></script>
+    <script th:src="@{/plugins/instafeed-js/instafeed.min.js}"></script>
     <!-- Google Map -->
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCC72vZw-6tGqFyRhhg5CkF2fqfILn2Tsw"></script>
-    <script src="plugins/google-map/gmap.js"></script>
+    <script th:src="@{/plugins/google-map/gmap.js}"></script>
     <!-- main js -->
-    <script src="js/custom.js"></script>
-
+    <script th:src="@{/js/custom.js}"></script>
 
 </body>
 
