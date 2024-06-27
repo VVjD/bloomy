@@ -32,32 +32,11 @@
     <link rel="stylesheet" th:href="@{/plugins/magnific-popup/magnific-popup.css}">
     <!-- main stylesheet -->
     <link rel="stylesheet" th:href="@{/css/style.css}">
-    <style>
-		@font-face {
-            font-family: 'Pretendard-Regular';
-            src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
-            font-weight: 400;
-            font-style: normal;
-        }
-        @font-face {
-            font-family: 'GangwonEduPowerExtraBoldA';
-            src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/GangwonEduPowerExtraBoldA.woff') format('woff');
-            font-weight: normal;
-            font-style: normal;
-        }
-        @font-face {
-            font-family: 'GmarketSansMedium';
-            src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
-            font-weight: normal;
-            font-style: normal;
-        }
-        body {
-            font-family: 'Pretendard-Regular';
-        }
-	</style>
 </head>
 
 <body>
+
+<div th:replace="~{inc/header :: menu}"></div>
 
     <section class="section-padding pt-4">
 		<div class="container">
@@ -83,7 +62,7 @@
                                         <div class="col-lg-3 col-md-6">
                                             <article class="post-grid mb-5">
                                                 <a class="post-thumb mb-4 d-block" href="blog-view.html">
-                                                    <img src="../static/images/news/f2.jpg" alt="" class="img-fluid w-100">
+                                                    <img th:src="@{/images/news/f2.jpg}" alt="" class="img-fluid w-100">
                                                 </a>
                                                 <span class="cat-name text-color font-sm font-extra text-uppercase letter-spacing">Lifestyle</span>
                                                 <h3 class="post-title mt-1"><a href="blog-view.html">How to Make list for travelling alone</a></h3>
@@ -95,7 +74,7 @@
                                         <div class="col-lg-3 col-md-6">
                                             <article class="post-grid mb-5">
                                                 <a class="post-thumb mb-4 d-block" href="blog-view.html">
-                                                    <img src="../static/images/news/f3.jpg" alt="" class="img-fluid w-100">
+                                                    <img th:src="@{/images/news/f3.jpg}" alt="" class="img-fluid w-100">
                                                 </a>
                                                 <span class=" cat-name text-color font-sm font-extra text-uppercase letter-spacing">Food</span>
                                                 <h3 class="post-title mt-1"><a href="blog-view.html">5 ingredient cilantro vinaigrette</a></h3>
@@ -107,7 +86,7 @@
                                         <div class="col-lg-3 col-md-6">
                                             <article class="post-grid mb-5">
                                                 <a class="post-thumb mb-4 d-block" href="blog-view.html">
-                                                    <img src="../static/images/news/f4.jpg" alt="" class="img-fluid w-100">
+                                                    <img th:src="@{/images/news/f4.jpg}" alt="" class="img-fluid w-100">
                                                 </a>
                                                 <span class="cat-name text-color font-sm font-extra text-uppercase letter-spacing">Explore</span>
                                                 <h3 class="post-title mt-1"><a href="blog-view.html">A Simple Way to Feel Like Home When You
@@ -120,7 +99,7 @@
                                         <div class="col-lg-3 col-md-6">
                                             <article class="post-grid mb-5">
                                                 <a class="post-thumb mb-4 d-block" href="blog-view.html">
-                                                    <img src="../static/images/news/f5.jpg" alt="" class="img-fluid w-100">
+                                                    <img th:src="@{/images/news/f5.jpg}" alt="" class="img-fluid w-100">
                                                 </a>
                                                 <span class="cat-name text-color font-sm font-extra text-uppercase letter-spacing">Travel</span>
                                                 <h3 class="post-title mt-1"><a href="blog-view.html">What Type of Traveller Are You?</a></h3>
@@ -132,7 +111,7 @@
                                         <div class="col-lg-3 col-md-6">
                                             <article class="post-grid mb-5">
                                                 <a class="post-thumb mb-4 d-block" href="blog-view.html">
-                                                    <img src="../static/images/news/f6.jpg" alt="" class="img-fluid w-100">
+                                                    <img th:src="@{/images/news/f6.jpg}" alt="" class="img-fluid w-100">
                                                 </a>
                                                 <span class="cat-name text-color font-sm font-extra text-uppercase letter-spacing">Experience</span>
                                                 <h3 class="post-title mt-1"><a href="blog-view.html">A Road Trip Review of the 2018</a></h3>
@@ -184,12 +163,6 @@
                     </section>
 				</div>
 
-
-
-
-
-
-
 				<div class="col-lg-4 col-md-8 col-sm-12 col-xs-12">
 					<div class="sidebar sidebar-right">
 						<div class="sidebar-wrap mt-5 mt-lg-0">
@@ -235,8 +208,9 @@
 		</div>
 	</section>
 
+    <div th:replace="~{inc/footer :: footer}"></div>
 
-    <!-- JAVASCRIPT FILES
+<!-- JAVASCRIPT FILES
 ================================================== -->
     <!-- initialize jQuery Library -->
     <script th:src="@{/plugins/jquery/jquery.js}"></script>
