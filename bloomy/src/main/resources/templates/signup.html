@@ -24,25 +24,25 @@
                     <!-- 회원가입 폼 -->
 						   <div class="account-container">
                             <div class="form-container sign-in-container">
-                                <form action="#" class="account-form">
+                                <form method="post" action="/signupok" class="account-form">
                                 
-                                        <h1>Create Account</h1>
+                                        <h1>회원가입</h1>
                                         
-                                        <span>use your email for registration</span>
-                                        <input class="account-input" type="text" placeholder="Name" />
+<!--                                        <span>use your email for registration</span>-->
+                                        <input class="account-input" type="text" placeholder="Name" name="name"/>
                                        
                                         
                                         <div style="display: flex;">
-                                            <input class="account-input" type="text" placeholder="ID" />
+                                            <input class="account-input" type="text" placeholder="ID" name="username"/>
                                             <button type="button" class="btn-sign-check" style="flex-shrink: 0;">중복확인</button>
                                         </div>
-                                        <input class="account-input" type="password" placeholder="Password" />
+                                        <input class="account-input" type="password" placeholder="Password" name="password"/>
                                         <input class="account-input" type="password" placeholder="Check Password" />
-                                        <input class="account-input" type="text" placeholder="NickName" />
-                                        <input class="account-input" type="text" placeholder="Phone (01012341234)" />
-                                        <input class="account-input" type="email" placeholder="email@bloomy.com" />
+                                        <input class="account-input" type="text" placeholder="NickName" name="nickname"/>
+                                        <input class="account-input" type="text" placeholder="Phone (01012341234)" name="tel"/>
+                                        <input class="account-input" type="email" placeholder="email@bloomy.com" name="email"/>
                                         <div style="display: flex;">
-                                            <input class="account-input" type="text" placeholder="Address" style="flex-grow: 1;" />
+                                            <input class="account-input" type="text" placeholder="Address" style="flex-grow: 1;" name="address"/>
                                             <button type="button" class="btn-sign-check">주소찾기</button>
                                         </div>
                                         <button type="submit" class="accout-left account-button">Sign Up</button>
