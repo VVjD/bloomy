@@ -47,3 +47,9 @@
 |[<img src="https://avatars.githubusercontent.com/u/155609506?v=4" width="150" height="150"/> <br> @sol2ee](https://github.com/sol2ee)|[<img src="https://avatars.githubusercontent.com/u/155510771?v=4" width="150" height="150"/> <br> @bread0808](https://github.com/bread0808)|[<img src="https://avatars.githubusercontent.com/u/157680931?v=4" width="150" height="150"/> <br> @Kijun0708](https://github.com/Kijun0708)|[<img src="https://avatars.githubusercontent.com/u/72927363?v=4" width="150" height="150"/> <br> @jjjub](https://github.com/jjjub)|[<img src="https://avatars.githubusercontent.com/u/153978814?v=4" width="150" height="150"/> <br> @zyoo-d](https://github.com/zyoo-d)|[<img src="https://avatars.githubusercontent.com/u/128907052?v=4" width="150" height="150"/> <br> @VVjD](https://github.com/VVjD)|
 
 </div>
+
+### 공동 작업
+
+- 기획서, 요구분석서 작성
+- ERD 설계
+- UI 설계
