@@ -8,11 +8,11 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 @Service
-@RequiredArgsConstructor
+@RequiredArgsConstructor //final 필드에 대한 생성자 자동 생성
 public class MemberService {
 
-    private final MemberRepository memberRepository;
-    private final BCryptPasswordEncoder bCryptPasswordEncoder;
+    private final MemberRepository memberRepository; //데이터베이스 작업을 위한 리퍼지토리
+    private final BCryptPasswordEncoder bCryptPasswordEncoder; //비밀번호 암호화를 위한 인코더
 
     public void signup(MemberDTO memberDTO) {
         //아이디 중복 검사
@@ -24,7 +24,7 @@ public class MemberService {
         //DTO > Entity
         Member member = Member.builder()
                 .username(memberDTO.getUsername())
-                .password(bCryptPasswordEncoder.encode(memberDTO.getPassword()))
+                .password(bCryptPasswordEncoder.encode(memberDTO.getPassword())) //비밀번호 암호화
                 .name(memberDTO.getName())
                 .nickname(memberDTO.getNickname())
                 .birth(memberDTO.getBirth())
@@ -34,6 +34,7 @@ public class MemberService {
                 .role("ROLE_MEMBER")
                 .build();
 
+        //회원 정보 저장
         memberRepository.save(member);
     }
 }
