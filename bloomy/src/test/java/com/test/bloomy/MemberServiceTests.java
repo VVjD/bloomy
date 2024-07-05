@@ -3,7 +3,7 @@ package com.test.bloomy;
 import com.test.bloomy.dto.MemberDTO;
 import com.test.bloomy.entity.Member;
 import com.test.bloomy.repository.MemberRepository;
-import com.test.bloomy.serviece.MemberService;
+import com.test.bloomy.service.MemberService;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

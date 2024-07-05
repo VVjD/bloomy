@@ -1,4 +1,4 @@
-package com.test.bloomy.serviece;
+package com.test.bloomy.service;
 
 import com.test.bloomy.dto.CustomUserDetails;
 import com.test.bloomy.entity.Member;

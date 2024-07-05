@@ -36,8 +36,10 @@ public class SecurityConfig {
 
         //커스텀 로그인 페이지
         http.formLogin(auth -> auth
-        .loginPage("/login")
-                .loginProcessingUrl("/loginok").permitAll()
+                .loginPage("/login")
+                .loginProcessingUrl("/loginok")
+                .defaultSuccessUrl("/blog")
+                .permitAll()
         );
 
         //로그아웃
