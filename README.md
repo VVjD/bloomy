@@ -21,13 +21,21 @@
 **Collaboration Tools**  
 <img src="https://img.shields.io/badge/github-181717?style=flat-square&logo=github&logoColor=white"> 
 <img src="https://img.shields.io/badge/discord-5865F2?style=flat-square&logo=discord&logoColor=white">
-<br>
+
 
 <br>
 
 ## 화면 설계
 
 **[Figma](https://www.figma.com/design/AbrPeZXwssvVnBM3n9ZNkk/Bloomy?node-id=0-1&t=bdKGPKAuQtSmZXb2-1)**
+
+<br>
+
+## ERD
+
+<p align="center">
+<img width="80%" alt="erd" src="https://github.com/SpringBlog/bloomy/assets/128907052/bae74ab4-c45e-41b4-8b08-f4e9461cdfed">
+</p>
 
 <br>
 
