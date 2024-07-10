@@ -19,7 +19,7 @@ public class Member {
     @SequenceGenerator(name = "member_seq_generator", sequenceName = "seqMember", allocationSize = 1)
     private Long seq;
 
-    @Column(nullable = false)
+    @Column(unique = true, nullable = false)
     private String username;
 
     @Column(nullable = false)
