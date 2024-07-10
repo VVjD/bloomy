@@ -2,7 +2,7 @@
 
 <br>
 
-- 개인 개발 기간 : 2024/06/26 ~
+- 개인 개발 기간 : 2024/06/26 ~ 
 - 공동 작업 기간 : 2024/05/27 ~ 2024/06/11
 - 공동 작업 인원 : 6명
 
@@ -21,7 +21,6 @@
 **Collaboration Tools**  
 <img src="https://img.shields.io/badge/github-181717?style=flat-square&logo=github&logoColor=white"> 
 <img src="https://img.shields.io/badge/discord-5865F2?style=flat-square&logo=discord&logoColor=white">
-
 
 <br>
 
