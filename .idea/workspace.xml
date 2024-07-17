@@ -21,26 +21,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "JavaScript Debug.admin-reportlist.html.executor": "Run",
-    "JavaScript Debug.admin-statistics.html.executor": "Run",
-    "JavaScript Debug.admin-userlist.html.executor": "Run",
-    "JavaScript Debug.blogmain.html.executor": "Run",
-    "JavaScript Debug.create_blog.html.executor": "Run",
-    "JavaScript Debug.signin.html.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/class/code/spring-blog/bloomy",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;JavaScript Debug.admin-reportlist.html.executor&quot;: &quot;Run&quot;,
+    &quot;JavaScript Debug.admin-statistics.html.executor&quot;: &quot;Run&quot;,
+    &quot;JavaScript Debug.admin-userlist.html.executor&quot;: &quot;Run&quot;,
+    &quot;JavaScript Debug.blogmain.html.executor&quot;: &quot;Run&quot;,
+    &quot;JavaScript Debug.create_blog.html.executor&quot;: &quot;Run&quot;,
+    &quot;JavaScript Debug.signin.html.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/class/code/spring-blog/bloomy&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\class\code\spring-blog\bloomy\src\main\resources\templates" />
@@ -55,8 +55,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9f38398b9061-39b83d9b5494-intellij.indexing.shared.core-IU-241.17011.79" />
-        <option value="bundled-js-predefined-1d06a55b98c1-0b3e54e931b4-JavaScript-IU-241.17011.79" />
+        <option value="bundled-js-predefined-1d06a55b98c1-0b3e54e931b4-JavaScript-IU-241.18034.62" />
       </set>
     </attachedChunks>
   </component>
@@ -71,6 +70,7 @@
       <workItem from="1718086811171" duration="1833000" />
       <workItem from="1718089059963" duration="483000" />
       <workItem from="1718089562535" duration="42000" />
+      <workItem from="1721210300156" duration="15000" />
     </task>
     <servers />
   </component>

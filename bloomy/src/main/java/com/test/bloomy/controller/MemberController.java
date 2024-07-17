@@ -33,7 +33,6 @@ public class MemberController {
 
     @GetMapping(value = "/blog")
     public String blog(Model model) {
-        
 
         return "blog-view";
     }
