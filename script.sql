@@ -48,18 +48,18 @@ CREATE TABLE MainCategory (
 
 CREATE SEQUENCE seqMainCategory;
 
--- 서브 카테고리 테이블 생성
-CREATE TABLE SubCategory (
-    seq	number NOT NULL,
-    subCategoryName	varchar2(30) NOT NULL,
-    subCategorySecret char(1) DEFAULT 'n' NOT NULL,
-    seqMainCategory	number	NOT NULL,
-    CONSTRAINT PK_SUBCATEGORY PRIMARY KEY (seq),
-    CONSTRAINT FK_MainCategory_TO_SubCategory FOREIGN KEY (seqMainCategory) REFERENCES MainCategory (seq),
-    CONSTRAINT SubCategory_sub_secret_ck CHECK (subCategorySecret in ('y', 'n'))
-);
-
-CREATE SEQUENCE seqSubCategory;
+-- -- 서브 카테고리 테이블 생성
+-- CREATE TABLE SubCategory (
+--     seq	number NOT NULL,
+--     subCategoryName	varchar2(30) NOT NULL,
+--     subCategorySecret char(1) DEFAULT 'n' NOT NULL,
+--     seqMainCategory	number	NOT NULL,
+--     CONSTRAINT PK_SUBCATEGORY PRIMARY KEY (seq),
+--     CONSTRAINT FK_MainCategory_TO_SubCategory FOREIGN KEY (seqMainCategory) REFERENCES MainCategory (seq),
+--     CONSTRAINT SubCategory_sub_secret_ck CHECK (subCategorySecret in ('y', 'n'))
+-- );
+--
+-- CREATE SEQUENCE seqSubCategory;
 
 -- 게시글 테이블 생성
 CREATE TABLE Board (
