@@ -23,6 +23,12 @@ CREATE TABLE BlogType (
 );
 
 CREATE SEQUENCE seqBlogType;
+select * from BlogType;
+insert into BlogType values (1, '엔터테이먼트/예술');
+insert into BlogType values (2, '생활/노하우/쇼핑');
+insert into BlogType values (3, '취미/여가/여행');
+insert into BlogType values (4, '지식/동향');
+commit;
 
 -- 블로그 테이블 생성
 CREATE TABLE Blog (
@@ -34,6 +40,9 @@ CREATE TABLE Blog (
     CONSTRAINT FK_User_TO_Blog FOREIGN KEY (username) REFERENCES Member (username),
     CONSTRAINT FK_BlogType_TO_Blog FOREIGN KEY (seqBlogType) REFERENCES BlogType (seq)
 );
+
+select * from Blog;
+insert into Blog values ('test', 'bloomy', 'bloomy입니다.', 4);
 
 -- 메인 카테고리 테이블 생성
 CREATE TABLE MainCategory (
@@ -47,6 +56,10 @@ CREATE TABLE MainCategory (
 );
 
 CREATE SEQUENCE seqMainCategory;
+
+insert into MainCategory values (1, '자유', 'n', 'test');
+insert into MainCategory values (2, '취미', 'n', 'test');
+commit;
 
 -- -- 서브 카테고리 테이블 생성
 -- CREATE TABLE SubCategory (
@@ -81,4 +94,4 @@ CREATE TABLE Board (
 
 CREATE SEQUENCE seqBoard;
 
-
+select * from Board;

@@ -25,7 +25,6 @@ public class Board {
     @Column(nullable = false)
     private String boardTitle;
 
-    @Lob
     @Column(nullable = false)
     private String boardContent;
 

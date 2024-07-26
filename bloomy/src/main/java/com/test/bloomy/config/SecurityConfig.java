@@ -26,7 +26,7 @@ public class SecurityConfig {
                 .requestMatchers("/static/**", "/css/**", "/js/**", "/images/**", "/plugins/**").permitAll()
                 .requestMatchers("/blog", "/login").permitAll()
                 .requestMatchers("/signup", "/signupok").permitAll()
-                //.requestMatchers("/blog").hasAnyRole("MEMBER")
+                .requestMatchers("/blog/board/**").hasRole("MEMBER") //"ROLE_" 알아서 추가
                 .anyRequest().authenticated() //나머지 경로 > 인증 사용자에게만 허가
         );
 

@@ -5,6 +5,7 @@ import com.test.bloomy.dto.MemberDTO;
 import com.test.bloomy.entity.Board;
 import com.test.bloomy.service.BoardService;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
@@ -14,6 +15,7 @@ import org.springframework.web.bind.annotation.*;
 @Controller
 @RequestMapping("/blog/board")
 @RequiredArgsConstructor
+@Slf4j
 public class BoardController {
 
     private final BoardService boardService;
@@ -29,10 +31,12 @@ public class BoardController {
         // 현재 로그인한 사용자의 username을 설정
         boardDTO.setUsername(userDetails.getUsername());
 
+        log.info("받은 BoardDTO: {}", boardDTO);
+
         // 게시글 저장 및 문서 추가를 서비스 계층에서 처리
         boardService.createDocument(boardDTO);
 
-        return "redirect:/blog/board";
+        return "redirect:/blog";
     }
 
 //    @GetMapping(value="/{id}}")
