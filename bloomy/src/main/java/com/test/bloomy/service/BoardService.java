@@ -2,10 +2,16 @@ package com.test.bloomy.service;
 
 import com.test.bloomy.dto.BoardDTO;
 import com.test.bloomy.entity.Board;
+import com.test.bloomy.entity.MainCategory;
 import com.test.bloomy.repository.BoardRepository;
+import com.test.bloomy.repository.MainCategoryRepository;
+import jdk.jfr.Category;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 @RequiredArgsConstructor
@@ -13,6 +19,11 @@ import org.springframework.stereotype.Service;
 public class BoardService {
 
     private final BoardRepository boardRepository;
+    private final MainCategoryRepository mainCategoryRepository;
+
+    public List<MainCategory> getAllCategories() {
+        return mainCategoryRepository.findAll();
+    }
 
     public void createDocument(BoardDTO boardDTO) {
 

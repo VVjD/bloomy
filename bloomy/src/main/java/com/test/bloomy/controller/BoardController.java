@@ -1,8 +1,8 @@
 package com.test.bloomy.controller;
 
 import com.test.bloomy.dto.BoardDTO;
-import com.test.bloomy.dto.MemberDTO;
-import com.test.bloomy.entity.Board;
+import com.test.bloomy.entity.MainCategory;
+import com.test.bloomy.repository.MainCategoryRepository;
 import com.test.bloomy.service.BoardService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -11,6 +11,8 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @Controller
 @RequestMapping("/blog/board")
@@ -21,7 +23,11 @@ public class BoardController {
     private final BoardService boardService;
 
     @GetMapping(value="/write")
-    public String boardCreate () {
+    public String boardCreate (Model model) {
+
+        List<MainCategory> categories = boardService.getAllCategories();
+        model.addAttribute("categories", categories);
+
         return "board-add";
     }
 
