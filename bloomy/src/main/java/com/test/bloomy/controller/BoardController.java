@@ -47,7 +47,8 @@ public class BoardController {
 
 //    @GetMapping(value="/{id}}")
     @GetMapping(value = "/view")
-    public String boardGet () {
+    public String boardGet (Model model) {
+
         return "board-view";
     }
 
