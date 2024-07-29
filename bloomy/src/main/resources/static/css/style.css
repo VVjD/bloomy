@@ -107,11 +107,8 @@ body{
   flex-direction: column;
 }
 
-
-
-
-
-p {
+p,
+span {
   font-family: 'GmarketSansMedium';
   line-height: 26px;
   font-size: 16px;
@@ -178,10 +175,6 @@ h6,
 .h6 {
   font-size: 14px;
   line-height: 22px;
-}
-
-.font-extra {
-  font-family: "Lora", serif;
 }
 
 /* 1.2. Common styles

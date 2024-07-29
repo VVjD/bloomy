@@ -50,8 +50,15 @@ public class BoardService {
 
     public List<Board> list() {
 
-        List<Board> list = boardRepository.findAll(Sort.by(Sort.Direction.DESC, "seq"));
+        List<Board> list = boardRepository.findAllWithMainCategory();
 
         return list;
+    }
+
+    public Board get(Long seq) {
+
+        Board board = boardRepository.findByIdWithMainCategory(seq);
+
+        return board;
     }
 }

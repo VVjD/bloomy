@@ -25,13 +25,13 @@
                                     <div class="row">
                                         <div th:each="board : ${list}" class="col-lg-3 col-md-6">
                                             <article class="post-grid mb-5">
-                                                <a class="post-thumb mb-4 d-block" th:href="@{'/blog/board/view' + ${board.seq}}">
+                                                <a class="post-thumb mb-4 d-block" th:href="@{'/blog/board/view/' + ${board.seq}}">
 <!--                                                    <img th:src="@{/images/default-image.jpg}" class="img-fluid w-100">-->
                                                 </a>
-                                                <span class="cat-name text-color font-extra text-sm text-uppercase letter-spacing-1" th:text="${board.seqMainCategory}"></span>
-                                                <h3 class="post-title mt-1"><a th:href="@{'/blog/view/' + ${board.seq}}" th:text="${board.boardTitle}"></a></h3>
-                
-                                                <span class="text-muted letter-spacing text-uppercase font-sm" th:text="${#temporals.format(board.boardRegdate, 'MMMM dd, yyyy')}"></span>
+                                                <span class="cat-name text-color font-extra text-sm text-uppercase letter-spacing-1" th:text="${board.mainCategory.mainCategoryName}"></span>
+                                                <h3 class="post-title mt-1"><a th:href="@{'/blog/board/view/' + ${board.seq}}" th:text="${board.boardTitle}"></a></h3>
+
+                                                <span class="text-muted letter-spacing text-uppercase font-sm" th:text="${#temporals.format(board.boardRegdate, 'yyyy-MM-dd')}"></span>
                 
                                             </article>
                                         </div>

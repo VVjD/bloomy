@@ -38,6 +38,11 @@ public class Board {
     @Column(nullable = false, length = 1)
     @Builder.Default
     private String boardSecret = "n";
+    
+    //카테고리명을 가져오기 위한 조인
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "seqMainCategory", insertable = false, updatable = false)
+    private MainCategory mainCategory;
 
     @Column(nullable = false)
     private Long seqMainCategory;

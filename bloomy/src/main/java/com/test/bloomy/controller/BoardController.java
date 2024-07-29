@@ -1,6 +1,7 @@
 package com.test.bloomy.controller;
 
 import com.test.bloomy.dto.BoardDTO;
+import com.test.bloomy.entity.Board;
 import com.test.bloomy.entity.MainCategory;
 import com.test.bloomy.repository.MainCategoryRepository;
 import com.test.bloomy.service.BoardService;
@@ -45,9 +46,12 @@ public class BoardController {
         return "redirect:/blog";
     }
 
-//    @GetMapping(value="/{id}}")
-    @GetMapping(value = "/view")
-    public String boardGet (Model model) {
+    @GetMapping(value = "/view/{seq}")
+    public String boardGet (Model model, @PathVariable Long seq) { //@PathVariable : 경로 변수를 표시하기 위한 매개 변수
+
+        Board board = boardService.get(seq);
+
+        model.addAttribute("board", board);
 
         return "board-view";
     }
