@@ -20,6 +20,18 @@
 				<div class="col-lg-8 col-md-12 col-sm-12 col-xs-12">
                         <div class="single-post">
                             <div class="post-header mb-5 text-center">
+
+                                <div class="col-md-6 ml-auto">
+                                    <div class="row">
+                                        <div class="col-lg-6 col-md-6 mb-2">
+                                            <input class="btn btn-primary w-100" type="submit" name="submit-contact" value="수정">
+                                        </div>
+                                        <div class="col-lg-6 col-md-6 mb-2">
+                                            <input class="btn btn-primary w-100" type="button" onclick="deletePost()" name="submit-contact" value="삭제">
+                                        </div>
+                                    </div>
+                                </div>
+
                                 <div class="meta-cat">
                                     <a class="post-category font-extra text-color text-uppercase font-sm letter-spacing-1" href="#" th:text="${board.mainCategory.mainCategoryName}"></a>
                                 </div>
@@ -29,6 +41,7 @@
                                     <span class="text-uppercase font-sm letter-spacing-1 mr-3" th:text="${board.username}"></span>
                                     <span class="text-uppercase font-sm letter-spacing-1" th:text="${#temporals.format(board.boardRegdate, 'yyyy-MM-dd')}"></span>
                                 </div>
+
                             </div>
                             <div class="post-body">
                                 <div class="entry-content" th:utext="${board.boardContent}"></div>
@@ -177,17 +190,8 @@
 				<div class="col-lg-4 col-md-8 col-sm-12 col-xs-12">
 					<div class="sidebar sidebar-right">
 						<div class="sidebar-wrap mt-5 mt-lg-0">
-							<div class="sidebar-widget about mb-5 text-center p-3">
-								<div class="about-author">
-									<img src="../static/images/author.jpg" alt="" class="img-fluid">
-								</div>
-								<h4 class="mb-0 mt-4" th:text="${board.username}"></h4>
-								<p>Travel Blogger</p>
-								<p>I'm Liam, last year I decided to quit my job and travel the world. You can follow my journey on this
-									blog!</p>
-								<img src="../static/images/liammason.png" alt="" class="img-fluid">
-							</div>
-						</div>
+                            <div th:replace="inc/sidebar :: profileSidebar"></div>
+                        </div>
 					</div>
 				</div>
 			</div>
@@ -197,6 +201,11 @@
     <th:block th:replace="~{inc/footer :: footer}"></th:block>
     <th:block th:replace="~{inc/config :: config-scripts}"></th:block>
     <th:block th:replace="~{inc/config :: ckeditor5-scripts}"></th:block>
+
+<script th:inline="javascript">
+    function deletePost() {
+    }
+</script>
 
 </body>
 

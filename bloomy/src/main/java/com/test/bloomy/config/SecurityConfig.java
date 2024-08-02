@@ -21,14 +21,17 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
 
-        //URI 허가
-        http.authorizeHttpRequests( auth -> auth
-                .requestMatchers("/static/**", "/css/**", "/js/**", "/images/**", "/plugins/**").permitAll()
-                .requestMatchers("/blog", "/login").permitAll()
-                .requestMatchers("/signup", "/signupok").permitAll()
-                .requestMatchers("/blog/board/**").hasRole("MEMBER") //"ROLE_" 알아서 추가
-                .anyRequest().authenticated() //나머지 경로 > 인증 사용자에게만 허가
-        );
+        http.authorizeHttpRequests(auth -> auth
+                .requestMatchers("/**").permitAll()); //모든 요청에 대한 접근 허용(개발 중)
+
+//        //URI 허가
+//        http.authorizeHttpRequests( auth -> auth
+//                .requestMatchers("/static/**", "/css/**", "/js/**", "/images/**", "/plugins/**").permitAll()
+//                .requestMatchers("/blog", "/login").permitAll()
+//                .requestMatchers("/signup", "/signupok").permitAll()
+//                .requestMatchers("/blog/board/**").hasRole("MEMBER") //"ROLE_" 알아서 추가
+//                .anyRequest().authenticated() //나머지 경로 > 인증 사용자에게만 허가
+//        );
 
         //CSRF 공격을 막기 위해 토큰 등록
         //CSRF 비활성화
