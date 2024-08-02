@@ -56,33 +56,9 @@
 				<div class="col-lg-4 col-md-8 col-sm-12 col-xs-12">
 					<div class="sidebar sidebar-right">
 						<div class="sidebar-wrap mt-5 mt-lg-0">
-							<div class="sidebar-widget about mb-5 text-center p-3">
-								<div class="about-author">
-									<img alt="프로필 이미지" class="img-fluid">
-									<!/-- th:src="${#authentication.principal.image}" --/>
-								</div>
-								<h4 class="mb-0 mt-4" sec:authentication="name"></h4>
-								<div sec:authorize="isAuthenticated()">
-									<!--로그인을 완료한 경우-->
-									<a href="/blog/board/write" class="btn btn-primary p-1">글쓰기</a>
-								</div>
-							</div>
 
-
-
-							<div class="sidebar-widget category mb-5">
-								<h4 class="text-center widget-title">Catgeories</h4>
-								<ul class="list-unstyled">
-									<li class="align-items-center d-flex justify-content-between">
-										<a href="#">Innovation</a>
-										<span>14</span>
-									</li>
-									<li class="align-items-center d-flex justify-content-between">
-										<a href="#">Software</a>
-										<span>2</span>
-									</li>
-								</ul>
-							</div>
+                            <div th:replace="inc/sidebar :: profileSidebar"></div>
+                            <div th:replace="inc/sidebar :: categorySidebar"></div>
 
 						</div>
 					</div>
