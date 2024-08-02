@@ -94,4 +94,4 @@ CREATE TABLE Board (
 
 CREATE SEQUENCE seqBoard;
 
-select * from Board;
+select * from Member;

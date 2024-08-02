@@ -32,12 +32,12 @@
                                                 <h3 class="post-title mt-1"><a th:href="@{'/blog/board/view/' + ${board.seq}}" th:text="${board.boardTitle}"></a></h3>
 
                                                 <span class="text-muted letter-spacing text-uppercase font-sm" th:text="${#temporals.format(board.boardRegdate, 'yyyy-MM-dd')}"></span>
-                
+
                                             </article>
                                         </div>
                                     </div>
                                 </div>
-                
+
                                 <div class="m-auto">
                                     <div class="pagination mt-5 pt-4">
                                         <ul class="list-inline ">
@@ -58,10 +58,14 @@
 						<div class="sidebar-wrap mt-5 mt-lg-0">
 							<div class="sidebar-widget about mb-5 text-center p-3">
 								<div class="about-author">
-									<img src="../static/images/author.jpg" alt="" class="img-fluid">
+									<img alt="프로필 이미지" class="img-fluid">
+									<!/-- th:src="${#authentication.principal.image}" --/>
 								</div>
-								<h4 class="mb-0 mt-4">Liam Mason</h4>
-								<img src="../static/images/liammason.png" alt="" class="img-fluid">
+								<h4 class="mb-0 mt-4" sec:authentication="name"></h4>
+								<div sec:authorize="isAuthenticated()">
+									<!--로그인을 완료한 경우-->
+									<a href="/blog/board/write" class="btn btn-primary p-1">글쓰기</a>
+								</div>
 							</div>
 
 
@@ -76,14 +80,6 @@
 									<li class="align-items-center d-flex justify-content-between">
 										<a href="#">Software</a>
 										<span>2</span>
-									</li>
-									<li class="align-items-center d-flex justify-content-between">
-										<a href="#">Social</a>
-										<span>10</span>
-									</li>
-									<li class="align-items-center d-flex justify-content-between">
-										<a href="#">Trends</a>
-										<span>5</span>
 									</li>
 								</ul>
 							</div>
