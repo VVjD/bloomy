@@ -204,7 +204,37 @@
 
 <script th:inline="javascript">
     function deletePost() {
+
+        if(confirm('이 게시글을 삭제하시겠습니까?')) {
+            const boardSeq = [[${board.seq}]];
+
+            //ajax보다 fetch를 선호하는 이유?
+            /* fetch는 내장되어 있어서 추가 라이브러리 필요 없다.
+            * jQuery 같은 외부 라이브러리에 의존X
+            * 체이닝이 가능하며 쉬운 문법을 제공한다. */
+            fetch(`/blog/board/delete/${boardSeq}`, {
+                method: 'DELETE',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+            })
+                .then(response => {
+                    if(!response.ok) {
+                        return response.text().then(text => { throw new Error(text) });
+                    }
+                    return response.text();
+                })
+                .then(message => {
+                    alert(message);
+                    window.location.href = '/blog';
+                })
+                .catch(error => {
+                    console.error('게시글 삭제 Error : ', error);
+                    alert(error.message);
+                });
+        }
     }
+
 </script>
 
 </body>

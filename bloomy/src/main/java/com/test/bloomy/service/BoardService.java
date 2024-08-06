@@ -5,14 +5,14 @@ import com.test.bloomy.entity.Board;
 import com.test.bloomy.entity.MainCategory;
 import com.test.bloomy.repository.BoardRepository;
 import com.test.bloomy.repository.MainCategoryRepository;
-import jdk.jfr.Category;
+import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
+import java.nio.file.AccessDeniedException;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
@@ -60,5 +60,18 @@ public class BoardService {
         Board board = boardRepository.findByIdWithMainCategory(seq);
 
         return board;
+    }
+
+    public void deleteDocument(Long seq, String username) throws AccessDeniedException {
+
+        Board board = boardRepository.findById(seq)
+                .orElseThrow(() -> new EntityNotFoundException("게시글을 찾을 수 없습니다."));
+
+        if(!board.getUsername().equals(username)) {
+            throw new AccessDeniedException("해당 게시글을 삭제할 수 없습니다.");
+        }
+
+        log.info("게시글 삭제 : {}", seq);
+        boardRepository.deleteById(seq);
     }
 }
