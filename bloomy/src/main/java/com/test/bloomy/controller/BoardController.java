@@ -49,9 +49,9 @@ public class BoardController {
         return "redirect:/blog";
     }
 
-    @GetMapping(value = "/view/{seq}")
+    /** 게시글 상세 조회에 대한 메서드입니다. */
+    @GetMapping(value = "/{seq}")
     public String boardGet (Model model, @PathVariable Long seq) { //@PathVariable : 경로 변수를 표시하기 위한 매개 변수
-
         Board board = boardService.get(seq);
 
         model.addAttribute("board", board);
@@ -59,7 +59,27 @@ public class BoardController {
         return "board-view";
     }
 
-    @DeleteMapping(value = "/delete/{seq}")
+    /** 게시글 수정에 대한 메서드입니다. */
+    @GetMapping("/{seq}/edit")
+    public String boardUpdate(@PathVariable Long seq, Model model) {
+        Board board = boardService.get(seq);
+        List<MainCategory> categories = boardService.getAllCategories();
+
+        model.addAttribute("board", board);
+        model.addAttribute("categories", categories);
+
+        return "board-edit";
+    }
+
+    @PutMapping(value = "/{seq}")
+    public String boardUpdateOk (@ModelAttribute BoardDTO boardDTO, @PathVariable Long seq) {
+
+        return "board-edit";
+    }
+
+
+    /** 게시글 상세 삭제에 대한 메서드입니다. */
+    @DeleteMapping(value = "/{seq}")
     public ResponseEntity<String> boardDelete (@PathVariable Long seq, @AuthenticationPrincipal UserDetails userDetails) throws AccessDeniedException {
 
         try {
