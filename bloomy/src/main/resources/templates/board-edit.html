@@ -36,21 +36,7 @@
         .ck-editor__editable {
             min-height: 400px;
         }
-        #add-btn{
-            width: 100%;
-        }
-        #title-box {
-            margin: 0;
-            border-bottom: 10px;
-            display: flex;
-            margin-bottom: 10px;
-            width: 100%;
-        }
-        #summary {
-            width: 23%;
-            padding: 13px 0;
-            pointer-events: none;
-        }
+
     </style>
 </head>
 
@@ -68,18 +54,17 @@
                     </h2>
 
                     <div class="comment-area my-5">
-                        <form th:method="put" th:action="@{/blog/board/${board.seq}">
-                            <div class="input-group search-bar" id="title-box">
-                                <div id="title-box"class="input-group-btn">
-                                    <div class="btn btn-primary" id="summary">카테고리</div>
+                        <form th:action="@{/blog/board/{seq}(seq=${board.seq})}" th:method="post">                            <div class="input-group search-bar m-0 border-bottom pb-2 d-flex mb-2 w-100">
+                                <div class="input-group-btn m-0 border-bottom pb-2 d-flex mb-2 w-100">
+                                    <div class="btn btn-primary py-2 w-25" >카테고리</div>
                                     <select class="form-control" name="seqMainCategory" placeholder="카테고리를 선택하세요." >
                                         <option th:each="category : ${categories}" th:value="${category.seq}" th:text="${category.mainCategoryName}"></option>
                                     </select>
                                 </div>
 
-                                <div class="input-group search-bar" id="title-box">
-                                    <div id="title-box"class="input-group-btn">
-                                        <div class="btn btn-primary" id="summary">제목</div>
+                                <div class="input-group search-bar m-0 border-bottom pb-2 d-flex mb-2 w-100">
+                                    <div class="input-group-btn m-0 border-bottom pb-2 d-flex mb-2 w-100">
+                                        <div class="btn btn-primary py-2 w-25">제목</div>
                                         <input class="form-control" name="boardTitle" placeholder="제목을 입력하세요." th:value="${board.boardTitle}"/>
                                     </div>
 
@@ -88,7 +73,7 @@
                                 <!-- 내용 입력 -->
 
                                 <textarea name="boardContent" id="editor" th:text="${board.boardContent}"></textarea> <!--textarea에서는 value 속성을 사용하지 않는다.-->
-                                <button type="submit" id="add-btn" class="btn btn-primary d-block mt-3">등록</button>
+                                <button type="submit" class="btn btn-primary d-block mt-3 w-100">등록</button>
                         </form>
                     </div>
                 </div>
