@@ -7,8 +7,7 @@ import java.time.LocalDate;
 
 @Entity
 @Getter
-@ToString
-@Builder
+@Builder(toBuilder = true) //수정을 허용하기 위해서 toBuilder 필요
 @AllArgsConstructor
 @NoArgsConstructor
 @Table(name = "Board")

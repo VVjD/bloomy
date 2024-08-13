@@ -54,27 +54,26 @@
                     </h2>
 
                     <div class="comment-area my-5">
-                        <form th:action="@{/blog/board/{seq}(seq=${board.seq})}" th:method="post">                            <div class="input-group search-bar m-0 border-bottom pb-2 d-flex mb-2 w-100">
+                        <div class="input-group search-bar m-0 border-bottom pb-2 d-flex mb-2 w-100">
+                            <div class="input-group-btn m-0 border-bottom pb-2 d-flex mb-2 w-100">
+                                <div class="btn btn-primary py-2 w-25" >카테고리</div>
+                                <select class="form-control" name="seqMainCategory" placeholder="카테고리를 선택하세요." >
+                                    <option th:each="category : ${categories}" th:value="${category.seq}" th:text="${category.mainCategoryName}" th:selected="${category.seq == board.mainCategory.seq}"></option>
+                                </select>
+                            </div>
+
+                            <div class="input-group search-bar m-0 border-bottom pb-2 d-flex mb-2 w-100">
                                 <div class="input-group-btn m-0 border-bottom pb-2 d-flex mb-2 w-100">
-                                    <div class="btn btn-primary py-2 w-25" >카테고리</div>
-                                    <select class="form-control" name="seqMainCategory" placeholder="카테고리를 선택하세요." >
-                                        <option th:each="category : ${categories}" th:value="${category.seq}" th:text="${category.mainCategoryName}" th:selected="${category.seq == board.mainCategory.seq}"></option>
-                                    </select>
+                                    <div class="btn btn-primary py-2 w-25">제목</div>
+                                    <input class="form-control" name="boardTitle" placeholder="제목을 입력하세요." th:value="${board.boardTitle}"/>
                                 </div>
 
-                                <div class="input-group search-bar m-0 border-bottom pb-2 d-flex mb-2 w-100">
-                                    <div class="input-group-btn m-0 border-bottom pb-2 d-flex mb-2 w-100">
-                                        <div class="btn btn-primary py-2 w-25">제목</div>
-                                        <input class="form-control" name="boardTitle" placeholder="제목을 입력하세요." th:value="${board.boardTitle}"/>
-                                    </div>
+                            </div>
 
-                                </div>
+                            <!-- 내용 입력 -->
 
-                                <!-- 내용 입력 -->
-
-                                <textarea name="boardContent" id="editor" th:text="${board.boardContent}"></textarea> <!--textarea에서는 value 속성을 사용하지 않는다.-->
-                                <button type="submit" class="btn btn-primary d-block mt-3 w-100">등록</button>
-                        </form>
+                            <textarea name="boardContent" id="editor" th:text="${board.boardContent}"></textarea> <!--textarea에서는 value 속성을 사용하지 않는다.-->
+                            <button type="submit" class="btn btn-primary d-block mt-3 w-100" onclick="submitEdit()">등록</button>
                     </div>
                 </div>
             </div>
@@ -87,13 +86,9 @@
 <th:block th:replace="~{inc/config :: config-scripts}"></th:block>
 <th:block th:replace="~{inc/config :: ckeditor5-scripts}"></th:block>
 
-<script>
+<script th:inline="javascript"> //javascript 코드 내에서 타임리프 표현식을 더 쉽고 안전하게 사용하기 위하여(ex, 자동 이스케이프)
 
-    function submitForm() {
-        var editorData = CKEDITOR.instances.editor.getData();
-        document.getElementById('boardContent').value = editorData;
-        return true;
-    }
+    let editor;
 
     CKEDITOR.ClassicEditor.create(document.getElementById("editor"), {
         toolbar: {
@@ -209,7 +204,45 @@
             'WProofreader',
             'MathType'
         ]
+    }).then(newEditor => {
+        editor = newEditor;
     });
+
+function submitEdit() {
+    const boardSeq = [[${board.seq}]];
+    const seqMainCategory = document.getElementsByName('seqMainCategory')[0].value;
+    const boardTitle = document.getElementsByName('boardTitle')[0].value;
+    const boardContent = editor.getData();
+
+    const data = {
+        seq: boardSeq,
+        seqMainCategory: seqMainCategory,
+        boardTitle: boardTitle,
+        boardContent: boardContent
+    };
+
+    fetch(`/blog/board/${boardSeq}/editok`, {
+        method: 'PUT',
+        headers: {
+            'Content-Type': 'application/json',
+            // 'X-CSRF-TOKEN': document.querySelector('meta[name="_csrf"]').getAttribute('content')
+        },
+        body: JSON.stringify(data)
+    })
+        .then(response => {
+            if (response.ok) {
+                window.location.href = `/blog/board/${boardSeq}`;  // 상세 페이지로 리다이렉트
+            } else {
+                return response.text().then(text => { throw new Error(text) });
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            alert('게시글 수정에 실패했습니다: ' + error.message);
+        });
+}
+
+
 </script>
 
 

@@ -14,5 +14,9 @@ public class BoardDTO {
     private String boardTitle;
     private String boardContent;
     private Long seqMainCategory;
+    private Integer boardViews;
+    private String boardSecret;
+
+    private String mainCategoryName;
 
 }

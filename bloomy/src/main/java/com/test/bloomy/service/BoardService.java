@@ -74,4 +74,26 @@ public class BoardService {
         log.info("게시글 삭제 : {}", seq);
         boardRepository.deleteById(seq);
     }
+
+    public void updateDocument(BoardDTO boardDTO) {
+        log.info("게시글 수정 시작: {}", boardDTO);
+
+        Board board = boardRepository.findById(boardDTO.getSeq())
+                .orElseThrow(() -> new RuntimeException("게시글을 찾을 수 없습니다."));
+
+        if (!board.getUsername().equals(boardDTO.getUsername())) {
+            throw new RuntimeException("게시글을 수정할 권한이 없습니다.");
+        }
+
+        Board updatedBoard = board.toBuilder()
+                .boardTitle(boardDTO.getBoardTitle())
+                .boardContent(boardDTO.getBoardContent())
+                .seqMainCategory(boardDTO.getSeqMainCategory())
+                .build();
+
+        boardRepository.save(updatedBoard);
+
+        log.info("게시글 수정 완료: {}", updatedBoard);
+
+    }
 }

@@ -71,16 +71,25 @@ public class BoardController {
         return "board-edit";
     }
 
-    @PutMapping(value = "/{seq}")
-    public String boardUpdateOk (@ModelAttribute BoardDTO boardDTO, @PathVariable Long seq) {
+    /** 게시글 수정을 처리하는 메서드입니다. */
+    @PutMapping("/{seq}/editok")
+    public ResponseEntity<?> boardUpdateOk(@RequestBody BoardDTO boardDTO, @PathVariable Long seq, @AuthenticationPrincipal UserDetails userDetails) {
+        try {
+            // 현재 로그인 중인 사용자의 username 설정
+            boardDTO.setUsername(userDetails.getUsername());
 
-        return "board-edit";
+            boardService.updateDocument(boardDTO);
+
+            return ResponseEntity.ok().build();
+        } catch (Exception e) {
+            return ResponseEntity.badRequest().body(e.getMessage());
+        }
     }
 
 
     /** 게시글 상세 삭제에 대한 메서드입니다. */
     @DeleteMapping(value = "/{seq}")
-    public ResponseEntity<String> boardDelete (@PathVariable Long seq, @AuthenticationPrincipal UserDetails userDetails) throws AccessDeniedException {
+    public ResponseEntity<?> boardDelete (@PathVariable Long seq, @AuthenticationPrincipal UserDetails userDetails) throws AccessDeniedException {
 
         try {
             //게시글 삭제
