@@ -7,6 +7,8 @@ import com.test.bloomy.repository.BoardRepository;
 import com.test.bloomy.service.BoardService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -18,15 +20,25 @@ import java.nio.file.AccessDeniedException;
 import java.util.List;
 
 @Controller
-@RequestMapping("/blog/board")
+@RequestMapping("/blog")
 @RequiredArgsConstructor
 @Slf4j
 public class BoardController {
 
     private final BoardService boardService;
-    private final BoardRepository boardRepository;
 
-    @GetMapping(value="/write")
+    @GetMapping
+    public String blog(Model model, @RequestParam(defaultValue = "0") int page, @RequestParam(defaultValue = "10") int size) {
+
+        Page<Board> boardPage = boardService.getBoardPaged(page, size);
+
+        List<Board> list = boardService.list();
+        model.addAttribute("list", list);
+
+        return "blog-view";
+    }
+
+    @GetMapping(value="/board/write")
     public String boardCreate (Model model) {
 
         List<MainCategory> categories = boardService.getAllCategories();
@@ -35,7 +47,7 @@ public class BoardController {
         return "board-add";
     }
 
-    @PostMapping(value = "/writeok")
+    @PostMapping(value = "/board/writeok")
     public String boardCreateOk (@ModelAttribute BoardDTO boardDTO, @AuthenticationPrincipal UserDetails userDetails) {
 
         // 현재 로그인한 사용자의 username을 설정
@@ -50,7 +62,7 @@ public class BoardController {
     }
 
     /** 게시글 상세 조회에 대한 메서드입니다. */
-    @GetMapping(value = "/{seq}")
+    @GetMapping(value = "/board/{seq}")
     public String boardGet (Model model, @PathVariable Long seq) { //@PathVariable : 경로 변수를 표시하기 위한 매개 변수
         Board board = boardService.get(seq);
 
@@ -60,7 +72,7 @@ public class BoardController {
     }
 
     /** 게시글 수정에 대한 메서드입니다. */
-    @GetMapping("/{seq}/edit")
+    @GetMapping("/board/{seq}/edit")
     public String boardUpdate(@PathVariable Long seq, Model model) {
         Board board = boardService.get(seq);
         List<MainCategory> categories = boardService.getAllCategories();
@@ -72,7 +84,7 @@ public class BoardController {
     }
 
     /** 게시글 수정을 처리하는 메서드입니다. */
-    @PutMapping("/{seq}/editok")
+    @PutMapping("/board/{seq}/editok")
     public ResponseEntity<?> boardUpdateOk(@RequestBody BoardDTO boardDTO, @PathVariable Long seq, @AuthenticationPrincipal UserDetails userDetails) {
         try {
             // 현재 로그인 중인 사용자의 username 설정
@@ -88,7 +100,7 @@ public class BoardController {
 
 
     /** 게시글 상세 삭제에 대한 메서드입니다. */
-    @DeleteMapping(value = "/{seq}")
+    @DeleteMapping(value = "/board/{seq}")
     public ResponseEntity<?> boardDelete (@PathVariable Long seq, @AuthenticationPrincipal UserDetails userDetails) throws AccessDeniedException {
 
         try {

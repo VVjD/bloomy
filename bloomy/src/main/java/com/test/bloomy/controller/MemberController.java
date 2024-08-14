@@ -36,13 +36,4 @@ public class MemberController {
         return "redirect:/login";
     }
 
-    @GetMapping(value = "/blog")
-    public String blog(Model model) {
-
-        List<Board> list = boardService.list();
-        model.addAttribute("list", list);
-
-        return "blog-view";
-    }
-
 }
