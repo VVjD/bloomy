@@ -17,5 +17,5 @@ public interface BoardRepository extends JpaRepository<Board, Long> {
     @Query("select b from Board b left join fetch b.mainCategory where b.seq = :seq")
     Board findByIdWithMainCategory(@Param("seq") Long seq);
 
-    Page<Board> findAllByBoardRegdateAtDesc(Pageable pageable);
+//    Page<Board> findAllByBoardRegdateAtDesc(Pageable pageable);
 }

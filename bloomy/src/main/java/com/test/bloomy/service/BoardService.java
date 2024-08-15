@@ -50,7 +50,9 @@ public class BoardService {
 
     public List<Board> list() {
 
-        List<Board> list = boardRepository.findAllWithMainCategory();
+        List<Board> list = boardRepository.findAll();
+
+//        List<Board> list = boardRepository.findAllWithMainCategory();
 
         return list;
     }

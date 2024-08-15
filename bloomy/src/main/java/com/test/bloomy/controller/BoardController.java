@@ -3,12 +3,9 @@ package com.test.bloomy.controller;
 import com.test.bloomy.dto.BoardDTO;
 import com.test.bloomy.entity.Board;
 import com.test.bloomy.entity.MainCategory;
-import com.test.bloomy.repository.BoardRepository;
 import com.test.bloomy.service.BoardService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageRequest;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -30,7 +27,7 @@ public class BoardController {
     @GetMapping
     public String blog(Model model, @RequestParam(defaultValue = "0") int page, @RequestParam(defaultValue = "10") int size) {
 
-        Page<Board> boardPage = boardService.getBoardPaged(page, size);
+//        Page<Board> boardPage = boardService.getBoardPaged(page, size);
 
         List<Board> list = boardService.list();
         model.addAttribute("list", list);
@@ -112,6 +109,5 @@ public class BoardController {
             return ResponseEntity.badRequest().body("게시글 삭제에 실패하였습니다.");
         }
     }
-
 
 }
